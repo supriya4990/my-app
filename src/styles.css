@@ -1,0 +1,12 @@
+/* You can add global styles to this file, and also import other style files */
+.country-listing{
+  font-family: Calibri;
+  color: coral;
+  padding: 2px;
+}
+.country-listing li {
+  border: 1px dot-dot-dash blue;
+}
+p{
+  color: purple;
+}

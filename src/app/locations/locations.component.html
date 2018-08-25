@@ -1,0 +1,15 @@
+<ul class="country-listing">
+  <!--Interpolation binding-->
+  <li>Country: {{country }}</li>
+  <!--Location is a class declared in location.ts & id, name are its properties-->
+  <li>Location Id: {{location.id}}</li>
+  <!--Pipe operator-->
+  <li>Location Name: {{location.name | uppercase}}</li>
+</ul>
+
+<div>
+  <label>
+    Input Name (2-way binding example)
+  </label>
+  <input [(ngModel)]="location.name"  placeholder="name">
+</div>
