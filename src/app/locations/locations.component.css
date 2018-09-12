@@ -1,0 +1,28 @@
+.login-name{
+  color:darkslategrey;
+}
+.text-success{
+  color:darkgreen;
+}
+.text-danger{
+  color:red;
+}
+.text-special{
+  color:darkgoldenrod;
+  font-family: "Rage Italic";
+}
+.box {
+  padding: 10px 10px 15px 2px;
+  border: 2px dot-dot-dash;
+  border-radius: 1px;
+  height: 30px;
+  width: 500px;
+  background-color: #336699;
+}
+.box input{
+  height: 20px;
+  width: 150px;
+  ruby-align: center;
+  padding: 2px;
+  border-radius: 2px;
+}

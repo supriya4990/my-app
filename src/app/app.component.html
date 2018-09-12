@@ -5,6 +5,15 @@
   <p>{{description}}</p>
   <!--To display the LocationComponent, add it to the template of AppComponent.-->
   <!--Remember that app-locations is the element selector for the LocationsComponent.-->
-  <app-locations></app-locations>
+  <app-locations [parentData]="parentText" ></app-locations>
+  <app-locations-details></app-locations-details>
 
+  <!--For Routing Example-->
+  <p>Routing Navigation</p>
+  <nav>
+    <a class="link-button" routerLink="/hotels" routerLinkActive="active">Hotels</a>
+    <a class="link-button" routerLink="/attractions" routerLinkActive="active">Attractions</a>
+    <a class="link-button" routerLink="/abcd" routerLinkActive="active">Random Click</a>
+  </nav>
+<router-outlet></router-outlet>
 

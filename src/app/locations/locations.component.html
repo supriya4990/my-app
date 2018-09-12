@@ -1,3 +1,4 @@
+<h3 class="login-name" xmlns="http://www.w3.org/1999/html">Welcome {{login_name}}</h3>
 <ul class="country-listing">
   <!--Interpolation binding-->
   <li>Country: {{country }}</li>
@@ -13,3 +14,110 @@
   </label>
   <input [(ngModel)]="location.name"  placeholder="name">
 </div>
+
+<h2>List Of Countries Where We provide Service</h2>
+<ul>
+  <li *ngFor = "let loc of countries" class="listing-items">
+    <span>{{loc.name}}</span>
+  </li>
+</ul>
+
+<!--Example of calling a function-->
+<p>
+  {{multiplicationCalculation(9,7)}}
+</p>
+
+<!--Javascript Global expressions can't be used directly-->
+<p>Site URl: {{siteurl}}</p>
+
+<!--Example of class binding-->
+<ul>
+  <li class="text-danger">Support this society</li>
+  <li [class]="successClass">Support this society</li>
+  <!--Conditional class apply...if true then apply class else not-->
+  <li [class.text-danger]="dangerClass">Crime rates are getting high</li>
+  <li [ngClass] = "multiClass">This one gets applied multiple classes</li>
+</ul>
+<!--END-->
+
+<!--Example of Style Binding-->
+<ul>
+  <li [style.color] = "'Purple'">Tortoise</li>
+  <li [style.color] = "hasError ? 'red':'green'">Tortoise</li>
+  <li [style.color] = "dynamicColor">Tortoise</li>
+  <li [ngStyle] = "multiStyles">Multi Style on single element</li>
+</ul>
+
+<!--Example of event binding i.e. click event-->
+<button (click)="clickButton()">Button Event</button>
+<button (click)="displayEventDetails($event)">Event Details</button>
+<button (click)="buttonEvent='Direct assign to variable'">Event Details</button>
+<div>The Result Output:  <i>{{buttonEvent}}</i></div>
+
+<!--Example of Template reference variable -->
+<input #refVariable type="text">
+<button (click)="getInputValue(refVariable)">Click Me</button>
+Result: {{inputValue}}
+<!--END-->
+
+<!--Example of Template two way binding -->
+<br/>
+<div class="box">
+2 way binding: <input type="text" placeholder="type here..." [(ngModel)] = "twoWayVariable" >{{twoWayVariable}}
+</div>
+
+<!--Example of ngIf directive -->
+<h4 *ngIf="elemExist; then thenElem; else elseElem;">Ng If Directive element exist</h4>
+<ng-template #thenElem>
+  <i>if element exists</i>
+</ng-template>
+<ng-template #elseElem>
+  <i>Else element exists</i>
+</ng-template>
+
+<!--Example of ngSwitch directive-->
+<div [ngSwitch]="color">
+  <div *ngSwitchCase="'red'" class="text-danger">This is danger switch.</div>
+  <div *ngSwitchCase="'green'" class="text-success">This is success switch.</div>
+  <div *ngSwitchDefault class="text-special">This is default switch.</div>
+</div>
+
+<!--Example of ngFor -->
+<div *ngFor="let company of companies; index as i; first as f; last as l; even as e; odd as o;">
+ Company {{i}} {{company}} First: {{f}} Last: {{l}} Even: {{e}} Odd: {{o}}
+</div>
+
+<!--Example of component interaction, Parent Data Variable-->
+<h2>{{parentData}}</h2>
+
+<!--Example of Pipe Operator-->
+<ul>
+  <li>{{ inputstring | lowercase}}</li>
+  <li>{{ inputstring | uppercase}}</li>
+  <li>{{ inputstring | titlecase}}</li>
+  <li>{{ inputstring | slice:3}}</li>
+  <li>{{ inputstring | slice:3:10}}</li>
+  <li>{{ 1.563 | number:'1.2-3'}}</li>
+  <li>{{ 1.563 | number:'3.1-2'}}</li>
+  <li>{{ 1.563 | number:'3.1-6'}}</li>
+  <li>{{countries }}</li>
+  <li>{{countries | json }}</li>
+  <li>{{0.25 | percent }}</li>
+  <li>{{5 | currency }}</li>
+  <li>{{5 | currency : 'INR'}}</li>
+  <li>{{5 | currency : 'INR' : 'code'}}</li>
+  <li>{{ date }}</li>
+  <li>{{ date | date:'shortTime'}}</li>
+  <li>{{ date | date:'mediumDate'}}</li>
+</ul>
+<!--EXAMPLE of Service & observables-->
+<p>Location component works!</p>
+<ul *ngFor="let p of person">
+  <li> Name: {{ p.name }}    Email: {{ p.email }}</li>
+</ul>
+
+<!--Routing Parameter-->
+<p>This is a routing parameter example</p>
+<ul *ngFor="let p of person">
+  <li (click)="onSelect(p)"> <label>({{p.id}})</label> Name: {{ p.name }}    Email: {{ p.email }}</li>
+</ul>
