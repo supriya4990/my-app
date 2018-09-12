@@ -10,3 +10,22 @@
 p{
   color: purple;
 }
+.listing-items{
+  border: 1px solid brown;
+  background-color:azure;
+  width: 150px;
+  height: 20px;
+}
+.active{
+  color: darkslateblue;
+}
+.link-button{
+  border:none;
+  background-color: #309c9c;
+  color: #ccc;
+  border-radius: 13%;
+  height: 20px;
+  width: 100px;
+  margin: 10px;
+  padding: 10px;
+}

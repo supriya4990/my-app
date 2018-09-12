@@ -8,4 +8,5 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'Travel Diary';
   description = 'This app is about listing of all places you have visited with their details.';
+  public parentText = 'I am a string sent by parent component.';
 }
